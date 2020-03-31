@@ -47,32 +47,7 @@ else
 	pod 'mopub-ios-sdk', :path => '../'
 end
 
-# Network mediation adapters
-if Dir.exists?(mediation_path) && !use_production_mediation
-    pod 'MoPub-AdColony-Adapters', :path => mediation_path
-    pod 'MoPub-AdMob-Adapters', :path => mediation_path
-    pod 'MoPub-Applovin-Adapters', :path => mediation_path
-    pod 'MoPub-Chartboost-Adapters', :path => mediation_path
-    pod 'MoPub-FacebookAudienceNetwork-Adapters', :path => mediation_path
-    pod 'MoPub-Flurry-Adapters', :path => mediation_path
-    pod 'MoPub-IronSource-Adapters', :path => mediation_path
-    pod 'MoPub-TapJoy-Adapters', :path => mediation_path
-    pod 'MoPub-UnityAds-Adapters', :path => mediation_path
-    pod 'MoPub-Verizon-Adapters', :path => mediation_path
-    pod 'MoPub-Vungle-Adapters', :path => mediation_path
-else
-    pod 'MoPub-AdColony-Adapters'
-    pod 'MoPub-AdMob-Adapters'
-    pod 'MoPub-Applovin-Adapters'
-    pod 'MoPub-Chartboost-Adapters'
-    pod 'MoPub-FacebookAudienceNetwork-Adapters'
-    pod 'MoPub-Flurry-Adapters'
-    pod 'MoPub-IronSource-Adapters'
-    pod 'MoPub-TapJoy-Adapters'
-    pod 'MoPub-UnityAds-Adapters'
-    pod 'MoPub-Verizon-Adapters'
-    pod 'MoPub-Vungle-Adapters'
-end
+    pod 'MoPub-Mintegral-Adapters', '6.1.2.0.1'
 
 # AppStore target.
 target 'AppStore Application' do

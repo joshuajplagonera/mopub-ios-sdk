@@ -8,11 +8,8 @@
 
 import Foundation
 import MoPub
-import MoPub_AdMob_Adapters
-import MoPub_FacebookAudienceNetwork_Adapters
-import MoPub_Flurry_Adapters
-import MoPub_Verizon_Adapters
-
+import MoPub_Mintegral_Adapters
+    
 final class NativeAdRendererManager {
     static let shared = NativeAdRendererManager()
     private let userDefaults: UserDefaults
@@ -123,22 +120,24 @@ private extension NativeAdRendererManager {
     var networkRendererConfigurations: [MPNativeAdRendererConfiguration] {
         var renderers: [MPNativeAdRendererConfiguration] = []
         
-        // OPTIONAL: AdMob native renderer
-        if let admobConfig = MPGoogleAdMobNativeRenderer.rendererConfiguration(with: mopubRendererSettings) {
-            renderers.append(admobConfig)
-        }
+//        // OPTIONAL: AdMob native renderer
+//        if let admobConfig = MPGoogleAdMobNativeRenderer.rendererConfiguration(with: mopubRendererSettings) {
+//            renderers.append(admobConfig)
+//        }
+//
+//        renderers.append(FacebookNativeAdRenderer.rendererConfiguration(with: mopubRendererSettings))
+//
+//        // OPTIONAL: Flurry native video renderer
+//        if let flurryConfig = FlurryNativeVideoAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
+//            renderers.append(flurryConfig)
+//        }
+//
+//        // OPTIONAL: Verizon native video renderer
+//        if let verizonConfig = MPVerizonNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
+//            renderers.append(verizonConfig)
+//        }
         
-        renderers.append(FacebookNativeAdRenderer.rendererConfiguration(with: mopubRendererSettings))
-        
-        // OPTIONAL: Flurry native video renderer
-        if let flurryConfig = FlurryNativeVideoAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
-            renderers.append(flurryConfig)
-        }
-        
-        // OPTIONAL: Verizon native video renderer
-        if let verizonConfig = MPVerizonNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
-            renderers.append(verizonConfig)
-        }
+        renderers.append(MintegralNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings))
         
         return renderers
     }

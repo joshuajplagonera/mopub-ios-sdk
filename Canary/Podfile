@@ -49,52 +49,7 @@ else
 	pod 'mopub-ios-sdk', :path => '../'
 end
 
-# Network mediation adapters
-if Dir.exists?(mediation_path) && !use_production_mediation
-    # Use local mediation adapters first if available
-    pod 'MoPub-AdColony-Adapters', :path => mediation_path
-    pod 'MoPub-AdMob-Adapters', :path => mediation_path
-    pod 'MoPub-Applovin-Adapters', :path => mediation_path
-    pod 'MoPub-Chartboost-Adapters', :path => mediation_path
-    pod 'MoPub-FacebookAudienceNetwork-Adapters', :path => mediation_path
-    pod 'MoPub-IronSource-Adapters', :path => mediation_path
-    pod 'MoPub-Mintegral-Adapters', :path => mediation_path
-    pod 'MoPub-TapJoy-Adapters', :path => mediation_path
-    pod 'MoPub-UnityAds-Adapters', :path => mediation_path
-    pod 'MoPub-Verizon-Adapters', :path => mediation_path
-    pod 'MoPub-Vungle-Adapters', :path => mediation_path
-elsif mediation_remote != nil && !mediation_remote.to_s.empty? && !use_production_mediation
-    # If local mediation adapters are not available, use pre-release remote and branch
-    # Default to master branch if branch is not available
-    branch = "master"
-    if mediation_branch != nil && !mediation_branch.to_s.empty?
-    	branch = mediation_branch
-    end
-    pod 'MoPub-AdColony-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-AdMob-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-Applovin-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-Chartboost-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-FacebookAudienceNetwork-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-IronSource-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-Mintegral-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-TapJoy-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-UnityAds-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-Verizon-Adapters', :git => mediation_remote, :branch => branch
-    pod 'MoPub-Vungle-Adapters', :git => mediation_remote, :branch => branch
-else
-    # Use production if `use_production_mediation` is set to `true`, or if other methods fail
-    pod 'MoPub-AdColony-Adapters'
-    pod 'MoPub-AdMob-Adapters'
-    pod 'MoPub-Applovin-Adapters'
-    pod 'MoPub-Chartboost-Adapters'
-    pod 'MoPub-FacebookAudienceNetwork-Adapters'
-    pod 'MoPub-IronSource-Adapters'
-    pod 'MoPub-Mintegral-Adapters'
-    pod 'MoPub-TapJoy-Adapters'
-    pod 'MoPub-UnityAds-Adapters'
-    pod 'MoPub-Verizon-Adapters'
-    pod 'MoPub-Vungle-Adapters'
-end
+pod 'Bytedance-UnionAD', '3.1.0.5'
 
 # AppStore target.
 target 'AppStore Application' do

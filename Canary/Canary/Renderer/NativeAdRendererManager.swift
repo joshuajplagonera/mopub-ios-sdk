@@ -8,10 +8,11 @@
 
 import Foundation
 import MoPub
-import MoPub_AdMob_Adapters
-import MoPub_FacebookAudienceNetwork_Adapters
-import MoPub_Mintegral_Adapters
-import MoPub_Verizon_Adapters
+
+//import MoPub_AdMob_Adapters
+//import MoPub_FacebookAudienceNetwork_Adapters
+//import MoPub_Mintegral_Adapters
+//import MoPub_Verizon_Adapters
 
 final class NativeAdRendererManager {
     static let shared = NativeAdRendererManager()
@@ -124,19 +125,21 @@ private extension NativeAdRendererManager {
         var renderers: [MPNativeAdRendererConfiguration] = []
         
         // OPTIONAL: AdMob native renderer
-        if let admobConfig = MPGoogleAdMobNativeRenderer.rendererConfiguration(with: mopubRendererSettings) {
-            renderers.append(admobConfig)
-        }
-        
-        renderers.append(FacebookNativeAdRenderer.rendererConfiguration(with: mopubRendererSettings))
-        
-        // OPTIONAL: Verizon native video renderer
-        if let verizonConfig = MPVerizonNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
-            renderers.append(verizonConfig)
-        }
-        
-        // OPTIONAL: Mintegral native video renderer
-        renderers.append(MintegralNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings))
+//        if let admobConfig = MPGoogleAdMobNativeRenderer.rendererConfiguration(with: mopubRendererSettings) {
+//            renderers.append(admobConfig)
+//        }
+//
+//        renderers.append(FacebookNativeAdRenderer.rendererConfiguration(with: mopubRendererSettings))
+//
+//        // OPTIONAL: Verizon native video renderer
+//        if let verizonConfig = MPVerizonNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings) {
+//            renderers.append(verizonConfig)
+//        }
+//
+//        // OPTIONAL: Mintegral native video renderer
+//        renderers.append(MintegralNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings))
+
+        renderers.append(PangleNativeAdRenderer.rendererConfiguration(with: mopubVideoRendererSettings))
 
         return renderers
     }

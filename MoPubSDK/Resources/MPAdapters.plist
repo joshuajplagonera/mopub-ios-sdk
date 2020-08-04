@@ -14,5 +14,6 @@
 	<string>VerizonAdapterConfiguration</string>
 	<string>VungleAdapterConfiguration</string>
 	<string>MintegralAdapterConfiguration</string>
+	<string>PangleAdapterConfiguration</string>
 </array>
 </plist>

@@ -18,7 +18,7 @@
 #import "MPUserInteractionGestureRecognizer.h"
 #import "NSJSONSerialization+MPAdditions.h"
 #import "NSURL+MPAdditions.h"
-#import "MPAPIEndPoints.h"
+#import "MPAPIEndpoints.h"
 #import "MoPub.h"
 #import "MPViewabilityTracker.h"
 #import "NSString+MPAdditions.h"

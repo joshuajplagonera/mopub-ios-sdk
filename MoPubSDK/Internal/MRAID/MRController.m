@@ -19,7 +19,7 @@
 #import "NSHTTPURLResponse+MPAdditions.h"
 #import "NSURL+MPAdditions.h"
 #import "MPForceableOrientationProtocol.h"
-#import "MPAPIEndPoints.h"
+#import "MPAPIEndpoints.h"
 #import "MoPub.h"
 #import "MPViewabilityTracker.h"
 #import "MPHTTPNetworkSession.h"
